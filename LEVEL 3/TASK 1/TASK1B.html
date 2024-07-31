@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Slideshow</title>
+    <style>
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            height: 600px; 
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide:first-child {
+            opacity: 1;
+        }
+
+        @keyframes slideshow {
+            0%, 33.33% { opacity: 1; }
+            33.34%, 100% { opacity: 0; }
+        }
+
+        .slide:nth-child(1) { animation: slideshow 9s infinite; }
+        .slide:nth-child(2) { animation: slideshow 9s infinite 3s; }
+        .slide:nth-child(3) { animation: slideshow 9s infinite 6s; }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="vit.jpeg" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="SRM.webp" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="hindhustan.jpg" alt="Slide 3">
+        </div>
+    </div>
+</body>
+</html>
